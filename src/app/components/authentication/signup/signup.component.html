@@ -1,0 +1,93 @@
+<div class="signup">
+  <div class="form-container">
+    <form action="">
+      <h2 style="color: blue">REGISTRATION</h2>
+      <p style="text-align: center; font-size: 1.1rem">
+        Already have an account ? if yes then click here to
+        <a routerLink="/signin" style="color: blue">login</a>
+      </p>
+      <div class="form-line flex gap-10 wrap">
+        <input
+          class="flex-1"
+          type="text"
+          name="firstname"
+          placeholder="Your firstname ..."
+          [(ngModel)]="user.firstname"
+        />
+        <input
+          class="flex-1"
+          type="text"
+          name="lastname"
+          placeholder="Your lastname ..."
+          [(ngModel)]="user.lastname"
+        />
+      </div>
+
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="email"
+          name="email"
+          placeholder="Your Email please ..."
+          [(ngModel)]="user.email"
+        />
+      </div>
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="password"
+          name="password"
+          placeholder="Your Password please ..."
+          [(ngModel)]="user.password"
+        />
+      </div>
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="password"
+          name="passwordConfirm"
+          placeholder="Confirm Password please ..."
+          [(ngModel)]="user.passwordConfirm"
+        />
+      </div>
+      <div class="button flex">
+        <button class="btn flex-1" type="submit" (click)="handleSubmit()">
+          Sign up
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div type="text" class="signup signin">
+  <div class="form-inline">
+    <input
+      type="text"
+      name="firstname"
+      placeholder="Your name"
+      [(ngModel)]="firstname"
+    />
+    <button class="btn" (click)="handleSave()">Save</button>
+  </div>
+  <div class="names"> -->
+
+<!---
+      Il est possible de récupérer d'autres informations telles que l'index de l'élement
+      index: position de l'élement
+      odd: indique si l'élément est à une position impaire
+      even: indique si l'élément est à une position paire
+      first: indique si l'élément est à la première position
+      last: indique si l'élément est à la dernière position
+    -->
+
+<!-- <ul *ngFor="let name of names; let i = index">
+      <li class="flex aic">
+        {{ name }}
+        <div class="name-action flex gap-10">
+          <button class="btn" (click)="handleUpdate(i)">Update</button>
+          <button class="btn" (click)="handleDelete(i)">Delete</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div> -->

@@ -1,0 +1,56 @@
+<app-loader *ngIf="isLoading"></app-loader>
+<div *ngIf="!isLoading" class="single-product flex content">
+  <div class="single-product-image flex-1 gap-10 flex">
+    <div class="single-product-image-list flex column" *ngIf="product">
+      <img
+        *ngFor="let url of product.imageUrl"
+        [src]="url"
+        [alt]="product.name"
+        height="116"
+        (mouseover)="handleChangeCurrentImage(url)"
+        [ngClass]="{ current: currentImage == url }"
+        class="flex-1"
+      />
+    </div>
+    &nbsp;&nbsp;
+    <div class="single-product-image-current flex-3" *ngIf="product">
+      <img [src]="currentImage" [alt]="product.name" width="300" height="350" />
+    </div>
+  </div>
+  <div
+    class="single-product-details"
+    style="margin-right: 100px"
+    *ngIf="product"
+  >
+    <h2 style="font-size: 2rem; margin: 0; line-height: 40px; padding: 0">
+      {{ product.name }}
+    </h2>
+    <div class="single-product-details-price flex gap-10 aic">
+      <h4>{{ (product.solde_price || 0) / 100 | currency: "EUR" }}</h4>
+      <del>
+        <h4 style="color: rgb(175, 22, 22)">
+          {{ (product.regular_price || 0) / 100 | currency: "EUR" }}
+        </h4>
+      </del>
+      <h6 class="product-percent-reduce">
+        -
+        {{
+          (product.regular_price / 100 - product.solde_price / 100) / 100
+            | percent
+        }}
+      </h6>
+    </div>
+    <div
+      class="single-proudct-details-created-at tic"
+      style="font-size: 1.5rem; margin-bottom: 1.5rem"
+    >
+      Crée le {{ product.createdAt | date: "dd/MM/YYYY" }}
+    </div>
+    <div class="product-action-button flex gap-5 column">
+      <button class="btn flex-1">Pay now</button>
+      <button class="btn flex-1">Add to Card</button>
+      <app-payment-card [fullWidth]="true"></app-payment-card>
+    </div>
+  </div>
+</div>
+<app-product-details [product]="product"></app-product-details>

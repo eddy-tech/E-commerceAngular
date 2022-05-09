@@ -1,0 +1,26 @@
+<header>
+  <div class="bars none" (mouseenter)="handleDisplayMobileNav()">
+    <img src="../../../assets/icons/nav-bar.png" alt="" width="50" />
+  </div>
+  <div class="logo">
+    <a routerLink="">{{ siteName | uppercase }}</a>
+  </div>
+
+  <div class="nav-bar">
+    <ul>
+      <li *ngFor="let item of navs_data">
+        <a routerLink="{{ item.path }}">{{ item.name | uppercase }}</a>
+      </li>
+      <li *ngFor="let item of auths_data">
+        <a routerLink="{{ item.path }}" class="btn">{{
+          item.name | uppercase
+        }}</a>
+      </li>
+    </ul>
+  </div>
+</header>
+<app-aside-nav
+  *ngIf="isDisplayMobileNav"
+  (close)="handleCloseMobileNav()"
+  (mouseleave)="handleCloseMobileNav()"
+></app-aside-nav>

@@ -1,0 +1,15 @@
+.slider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  background-color: white;
+  margin-top: 2rem;
+}
+
+.previous,
+.next {
+  border-radius: 50%;
+  padding: 0 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+<div class="product-item" *ngIf="product">
+  <div class="product-image" [routerLink]="['/products', product.slug]">
+    <img
+      [src]="product ? product.imageUrl[0] : ''"
+      [alt]="product.name"
+      height="300"
+      width="250"
+      (click)="deleteProduct(product)"
+    />
+  </div>
+  <div class="product-details">
+    <div class="product-name">
+      <h2 style="width: 200px; margin-left: 5px; margin-right: 5px">
+        {{ product.name }}
+      </h2>
+    </div>
+    <div class="product-price">
+      <h3>{{ (product.solde_price || 0) / 100 | currency: "EUR" }}</h3>
+      <del>
+        <h3 class="product-old">
+          {{ (product.regular_price || 0) / 100 | currency: "EUR" }}
+        </h3>
+      </del>
+      <div>
+        <h6 class="product-percent-reduce">
+          -
+          {{
+            (product.regular_price / 100 - product.solde_price / 100) / 100
+              | percent
+          }}
+        </h6>
+      </div>
+    </div>
+    <div class="product-action-button" style="margin-left: 60px">
+      <button class="btn" (click)="handleClickProduct(product)">View</button>
+    </div>
+  </div>
+</div>

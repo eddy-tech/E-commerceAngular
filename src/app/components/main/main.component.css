@@ -1,0 +1,13 @@
+.container {
+  min-height: 100vh;
+  background-color: #efefef;
+  align-items: start;
+  margin: auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    min-height: 200vh;
+  }
+}

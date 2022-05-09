@@ -1,0 +1,30 @@
+.not-found h1 {
+  border: 5px solid rgb(175, 22, 22);
+  padding: 50px;
+  width: 300px;
+  height: 300px;
+  font-size: 4rem;
+  display: flex;
+  justify-content: center; /* SUIVANT L'AXE HORIZONTALE */
+  align-items: center; /* SUIVANT L'AXE VERTICALE */
+  border-radius: 200px;
+}
+
+.not-found p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .not-found h1 {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .not-found h1 {
+    width: 100px;
+    height: 100px;
+  }
+}

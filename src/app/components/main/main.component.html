@@ -1,0 +1,12 @@
+<app-home-slider></app-home-slider>
+<h1 style="color: blue; margin: 0; padding: 30px 0; text-align: center">
+  {{ title }}
+</h1>
+<div class="container">
+  <div class="content">
+    <app-product-list
+      [resultData]="products"
+      [isLoading]="isLoading"
+    ></app-product-list>
+  </div>
+</div>

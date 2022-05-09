@@ -1,0 +1,18 @@
+<div class="product-list" *ngIf="!isLoading && resultData.length">
+  <app-product-item
+    [product]="product"
+    *ngFor="let product of resultData"
+    (deleteProductItem)="handleDeleteProduct($event)"
+    (displayProductViewModal)="handleDisplayProductViewModal($event)"
+  >
+  </app-product-item>
+  <div class="bar" *ngIf="isLoading && !resultData.length">
+    NO DATA YET, PLEASE EXCUSE US FOR THIS DESAGREEMENT
+  </div>
+
+  <app-modal-product-view
+    *ngIf="isDisplayModal && modalProduct"
+    [product]="modalProduct"
+    (close)="handleCloseModal()"
+  ></app-modal-product-view>
+</div>

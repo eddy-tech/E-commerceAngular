@@ -1,0 +1,22 @@
+<div class="slider">
+  <img
+    src="../../../assets/icons/fleche_gauche.jpg"
+    alt=""
+    class="previous"
+    width="40"
+    (click)="handleChangeImages(-1)"
+  />
+  <img
+    [src]="slider[currentIndex]?.imageUrl"
+    [alt]="slider[currentIndex]?.name"
+    width="500"
+  />
+
+  <img
+    src="../../../assets/icons/fleche_droite.jpg"
+    alt=""
+    class="next"
+    width="40"
+    (click)="handleChangeImages(1)"
+  />
+</div>

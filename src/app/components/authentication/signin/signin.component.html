@@ -1,0 +1,51 @@
+<div class="signup" style="display: block">
+  <div class="form-container aic" style="text-align: center">
+    <form action="" [formGroup]="signinForm">
+      <h2 style="color: blue">CONNEXION</h2>
+      <p style="text-align: center; font-size: 1.1rem">
+        Don't have an account? if yes then click here to
+        <a routerLink="/signup" style="color: blue">register</a>
+      </p>
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="email"
+          name="email"
+          placeholder="Your Email please ..."
+          [formControl]="email"
+        />
+      </div>
+      <div class="error" *ngIf="email.dirty && !email.valid">
+        <p *ngIf="!email.hasError('required')">
+          This email doesn't respect the good format !
+        </p>
+        <p *ngIf="email.hasError('required')">Email is required !</p>
+      </div>
+      <div class="form-line flex">
+        <input
+          class="flex-1"
+          type="password"
+          name="password"
+          placeholder="Your Password please ..."
+          [formControl]="password"
+        />
+      </div>
+      <div class="error" *ngIf="password.dirty && !password.valid!">
+        <p *ngIf="password.hasError('minlength')">
+          Password must be at least 6 characters !
+        </p>
+        <p *ngIf="password.hasError('required')">The password is required !</p>
+      </div>
+      <div class="button flex">
+        <button
+          class="btn flex-1"
+          [disabled]="!this.signinForm.valid"
+          type="submit"
+          (click)="handleSubmit()"
+        >
+          Sign In
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

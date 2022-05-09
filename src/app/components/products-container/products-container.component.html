@@ -1,0 +1,24 @@
+<app-page-title
+  [title]="'Lists products of : ' + currentCategory?.name"
+  [ngClass]="{ color: currentCategory?.name }"
+></app-page-title>
+<div class="products-container flex content p-10">
+  <div class="products-category tic">
+    <ul class="unListed" *ngIf="categories">
+      <li *ngFor="let category of categories">
+        <a
+          href="#"
+          (click)="handleClick($event, category)"
+          [ngClass]="{ active: currentCategory?.slug === category.slug }"
+          >{{ category.name }}</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="products-list wrap flex-1 jcc" *ngIf="products">
+    <app-product-list
+      [resultData]="products"
+      [isLoading]="isLoading"
+    ></app-product-list>
+  </div>
+</div>

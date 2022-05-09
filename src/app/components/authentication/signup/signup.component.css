@@ -1,0 +1,38 @@
+button:disabled {
+  cursor: not-allowed;
+  background-color: rgb(175, 22, 22);
+}
+button:enabled {
+  cursor: pointer;
+  background-color: green;
+}
+
+/*
+.signup ul {
+  list-style: none;
+  padding: 0;
+}
+
+.signup ul li {
+  border: 0.1px solid #1d1d1d;
+  justify-content: space-between;
+  padding: 5px;
+} */
+
+/* .signup {
+    width: 600px;
+    height: 600px;
+    border: 0.1px solid black;
+    margin: 2px auto;
+    padding: 10px;
+  }
+
+  .form-inline input {
+    border: 0.1px solid #ccc;
+    width: 60%;
+    height: 40px;
+    margin: 5px;
+    padding: 0 10px;
+    font-size: 1.3rem;
+    border-radius: 1%;
+  } */
